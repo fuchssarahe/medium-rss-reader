@@ -5,12 +5,16 @@
 }
 
 .Categories__category {
+  background-color: #F4F4ED;
   border: 1px solid black;
   border-radius: 0.25em;
   margin: 0.5em;
   padding: 0.25em;
+  box-shadow: 0.125em 0.125em #808782;
 }
 
 .Categories__category:hover {
-  background-color: lightgray;
+  background-color: #808782;
+  color: #F4F4ED;
+  cursor: pointer;
 }

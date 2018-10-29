@@ -40,8 +40,10 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        <h1>Medium RSS Reader</h1>
-        <FeedSelector handleSubmit={this.handleSubmit} />
+        <div className="App__header">
+          <h1>Medium RSS Reader</h1>
+          <FeedSelector handleSubmit={this.handleSubmit} />
+        </div>
         <Categories categories={Array.from(this.state.tags)} onClick={this.removeTag} removable={true} />
         <ArticleList
           articles={filterArticlesByTags(this.state.articles, this.state.tags)}
