@@ -1,3 +1,18 @@
+Resources
+https://medium.com/netscape/hacking-it-out-when-cors-wont-let-you-be-great-35f6206cc646
+https://www.npmjs.com/package/rss-parser
+https://medium.com/@cogdog/medium-your-rss-feeds-are-mess-ebfe6f731c22
+https://www.ibm.com/developerworks/library/x-tengoodxmlhabits/index.html#saxoverdom
+https://www.w3.org/TR/xml-c14n2/
+
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
