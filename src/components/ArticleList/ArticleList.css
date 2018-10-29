@@ -1,15 +1,8 @@
-.ArticleList {
-  border: 1px solid black;
-  margin: 1em auto;
-  max-width: 800px;
-  padding: 0.5em;
-  width: 80%;
-}
+.ArticleList {}
 
 .ArticleList--empty {
-  border: 1px solid black;
-  margin: 1em auto;
-  max-width: 800px;
-  padding: 0.5em;
-  width: 80%;
+  text-align: center;
+  margin: 2em;
 }
+
+.ArticleList--fetching {}

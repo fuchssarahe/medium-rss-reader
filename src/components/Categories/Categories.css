@@ -1,0 +1,12 @@
+.Categories {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.Categories__category {
+  border: 1px solid black;
+  border-radius: 0.25em;
+  margin: 0.5em;
+  padding: 0.25em;
+}

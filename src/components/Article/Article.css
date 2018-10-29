@@ -15,19 +15,6 @@
   margin-left: 0.5em;
 }
 
-.Article__categories {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.Article__category {
-  border: 1px solid black;
-  border-radius: 0.25em;
-  margin: 0.5em;
-  padding: 0.25em;
-}
-
 .Article__snippet {
   margin-left: 0.5em;
 }

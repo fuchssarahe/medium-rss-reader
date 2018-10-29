@@ -25,3 +25,8 @@ img {
 a {
   color: black;
 }
+
+h1 {
+  text-align: center;
+  padding-bottom: 0.5em;
+}

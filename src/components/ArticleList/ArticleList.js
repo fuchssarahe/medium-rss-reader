@@ -2,15 +2,15 @@ import React from 'react';
 import Article from '../Article/Article';
 import './ArticleList.css';
 
-const ArticleList = ({ articles, isFetching }) => {
+const ArticleList = ({ articles, isFetching, addFilter }) => {
   if (isFetching) return <FetchingArticlesList />;
   if (!articles) return <EmptyArticlesList />;
 
   return (
-    <ul className='Articles'>
+    <ul className='ArticleList'>
       {
-        articles.items.map(item => {
-          return <Article item={item} key={item.link} />
+        articles.map(item => {
+          return <Article item={item} addFilter={addFilter} key={item.link} />
         }
       )}
     </ul>
@@ -19,13 +19,13 @@ const ArticleList = ({ articles, isFetching }) => {
 
 const FetchingArticlesList = () => {
   return (
-    <div className='Articles--fetching'>Fetching articles...</div>
+    <div className='ArticleList ArticleList--fetching ArticleList--empty'>Fetching articles...</div>
   )
 }
 
 const EmptyArticlesList = () => {
   return (
-    <div className='Articles--empty'>There are no articles yet! Better find some!</div>
+    <div className='ArticleList ArticleList--empty'>There are no articles yet! Better find some!</div>
   )
 }
 

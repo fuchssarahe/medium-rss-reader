@@ -1,12 +1,13 @@
 import React from 'react';
+import Categories from '../Categories/Categories';
 import './Article.css';
 
-const Article = ({ item }) => {
+const Article = ({ item, addFilter }) => {
   return (
     <li className='Article'>
       <Title url={item.link} title={item.title} />
       <Metadata creator={item.creator} date={item.pubDate} />
-      <Categories categories={item.categories} />
+      <Categories categories={item.categories} onClick={addFilter} />
       <Snippet text={item.contentSnippet} url={item.link} />
     </li>
   );
@@ -23,20 +24,6 @@ const Title = ({ url, title }) => {
 const Metadata = ({ creator, date }) => {
   return (
     <h4 className='Article__metadata'>{creator} | {date}</h4>
-  );
-}
-
-const Categories = ({ categories }) => {
-  return (
-    <h4 className='Article__categories'>
-      {
-        categories.map(category => (
-          <div className='Article__category' key={category}>
-            {category}
-          </div>)
-        )
-      }
-    </h4>
   );
 }
 
