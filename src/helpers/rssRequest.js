@@ -5,9 +5,11 @@ import Parser  from 'rss-parser';
 // response body. For simplicity, I'll use an existing
 // service instead of hosting one myself.
 const CORS_PROXY = "https://cors-anywhere.herokuapp.com/"
+const parser = new Parser();
 
+// @param {string} url
+// @callback errorCallback
 function rssRequest(url, errorCallback = null) {
-  const parser = new Parser();
   const errorHandler = errorCallback || function(error) { alert(`There was an error with your request to ${url}`) };
   return parser.parseURL(CORS_PROXY + url).catch(errorHandler);
 };

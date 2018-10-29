@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Categories /> renders categories as individual elements 1`] = `
+<h4
+  className="Categories"
+>
+  <button
+    className="Categories__category"
+    key="a"
+    onClick={[Function]}
+  >
+    a
+  </button>
+  <button
+    className="Categories__category"
+    key="b"
+    onClick={[Function]}
+  >
+    b
+  </button>
+  <button
+    className="Categories__category"
+    key="c"
+    onClick={[Function]}
+  >
+    c
+  </button>
+</h4>
+`;
+
+exports[`<Categories /> when "categories" is undefined it renders an empty element 1`] = `
+<h4
+  className="Categories"
+/>
+`;
+
+exports[`<Categories /> when categories are removable it shows an X on category 1`] = `
+<h4
+  className="Categories"
+>
+  <button
+    className="Categories__category"
+    key="a"
+    onClick={[Function]}
+  >
+    a
+    <span>
+       x
+    </span>
+  </button>
+</h4>
+`;
+
+exports[`<Categories /> when no categories are present it renders an empty element 1`] = `
+<h4
+  className="Categories"
+/>
+`;

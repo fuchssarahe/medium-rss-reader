@@ -2,7 +2,7 @@ import React from 'react';
 import Article from '../Article/Article';
 import './ArticleList.css';
 
-const ArticleList = ({ articles, isFetching, addTagFilter }) => {
+const ArticleList = ({ articles, isFetching = false, addTagFilter }) => {
   if (isFetching) return <FetchingArticlesList />;
   if (!articles || articles.length === 0) return <EmptyArticlesList />;
 

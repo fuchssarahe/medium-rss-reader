@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Article /> it handles a publication feed 1`] = `
+<li
+  className="Article"
+>
+  <Title
+    title="What’s the Matter With Manhattan?"
+    url="https://medium.com/the-atlantic/uuid"
+  />
+  <Metadata
+    creator="Derek Thompson"
+    date="Mon, 15 Oct 2018 15:30:12 GMT"
+  />
+  <Categories
+    categories={
+      Array [
+        "cities",
+        "economics",
+        "retail",
+        "business",
+        "housing",
+      ]
+    }
+    onClick={[Function]}
+  />
+  <Snippet
+    text="New York’s empty storefronts are a dark omen for the future of citiesContinue reading on The Atlantic »"
+    url="https://medium.com/the-atlantic/uuid"
+  />
+</li>
+`;
+
+exports[`<Article /> it handles a sparse user feed 1`] = `
+<li
+  className="Article"
+>
+  <Title
+    title="Attribute always. Period."
+    url="https://medium.com/@cogdog/uuid"
+  />
+  <Metadata
+    creator="Alan Levine"
+    date="Fri, 24 Aug 2018 17:41:22 GMT"
+  />
+</li>
+`;

@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ArticleList /> renders Articles for each provided article object 1`] = `
+<ul
+  className="ArticleList"
+>
+  <Article
+    addTagFilter={[Function]}
+    item={
+      Object {
+        "link": "a",
+        "title": "Article 1",
+      }
+    }
+    key="a"
+  />
+  <Article
+    addTagFilter={[Function]}
+    item={
+      Object {
+        "link": "b",
+        "title": "Article 2",
+      }
+    }
+    key="b"
+  />
+</ul>
+`;
+
+exports[`<ArticleList /> when "articles" is undefined it renders an empty element 1`] = `<EmptyArticlesList />`;
+
+exports[`<ArticleList /> when articles are currently being fetched it renders an empty element 1`] = `<FetchingArticlesList />`;
+
+exports[`<ArticleList /> when no articles are present it renders an empty element 1`] = `<EmptyArticlesList />`;

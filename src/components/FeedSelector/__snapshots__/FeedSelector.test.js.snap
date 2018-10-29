@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FeedSelector /> it renders a form with input and submit button 1`] = `
+<form
+  className="FeedSelector"
+  onSubmit={[Function]}
+>
+  <input
+    className="FeedSelector__input"
+    name="feed-name"
+    onChange={[Function]}
+    type="text"
+  />
+  <button
+    className="FeedSelector__button"
+    type="submit"
+  >
+    View Feed
+  </button>
+</form>
+`;

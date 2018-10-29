@@ -1,3 +1,5 @@
+// @param {Object[]} articles - Output structure of rssRequest
+// @param {string[]} tags
 function filterArticlesByTags(articles, tags) {
   if (!articles) { return []; }
   if (!tags || tags.length === 0) { return articles; }

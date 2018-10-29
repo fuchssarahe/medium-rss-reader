@@ -1,15 +1,15 @@
 import React from 'react';
 import './Categories.css';
 
-const Categories = ({ categories, removable, onClick = null }) => {
+const Categories = ({ categories = [], removable = false, onClick = null }) => {
   return (
     <h4 className='Categories'>
       {
         categories.map(category => (
-          <div className='Categories__category' key={category} onClick={() => onClick(category)}>
+          <button className='Categories__category' key={category} onClick={() => onClick(category)}>
             {category}
             { removable && <span> x</span> }
-          </div>)
+          </button>)
         )
       }
     </h4>
