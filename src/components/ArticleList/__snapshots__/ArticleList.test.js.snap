@@ -27,8 +27,6 @@ exports[`<ArticleList /> renders Articles for each provided article object 1`] =
 </ul>
 `;
 
-exports[`<ArticleList /> when "articles" is undefined it renders an empty element 1`] = `<EmptyArticlesList />`;
-
 exports[`<ArticleList /> when articles are currently being fetched it renders an empty element 1`] = `<FetchingArticlesList />`;
 
 exports[`<ArticleList /> when no articles are present it renders an empty element 1`] = `<EmptyArticlesList />`;

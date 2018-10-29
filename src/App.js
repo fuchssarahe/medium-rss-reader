@@ -6,15 +6,14 @@ import Categories from './components/Categories/Categories';
 import filterArticlesByTags from './helpers/articleHelpers';
 import './App.css';
 
+// Responsible for rendering the main content on the page and managing state
+// across which feed to fetch and articles to show.
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      articles: null,
-      isFetching: false,
-      tags: new Set()
-    };
-  }
+  state = {
+    articles: null,
+    isFetching: false,
+    tags: new Set()
+  };
 
   handleSubmit = async (feedName) => {
     this.setState({ isFetching: true })
@@ -43,7 +42,7 @@ class App extends Component {
       <main className="App">
         <h1>Medium RSS Reader</h1>
         <FeedSelector handleSubmit={this.handleSubmit} />
-        <Categories categories={Array.from(this.state.tags)} onClick={this.removeTag} removable="true" />
+        <Categories categories={Array.from(this.state.tags)} onClick={this.removeTag} removable={true} />
         <ArticleList
           articles={filterArticlesByTags(this.state.articles, this.state.tags)}
           isFetching={this.state.isFetching}

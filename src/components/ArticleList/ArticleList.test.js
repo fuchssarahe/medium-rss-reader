@@ -11,12 +11,6 @@ describe('<ArticleList />', () => {
     )).toMatchSnapshot();
   })
 
-  describe('when "articles" is undefined', () => {
-    test('it renders an empty element', () => {
-      expect(shallow(<ArticleList addTagFilter={() => {}} />)).toMatchSnapshot();
-    });
-  });
-
   describe('when no articles are present', () => {
     test('it renders an empty element', () => {
       expect(shallow(<ArticleList articles={[]} addTagFilter={() => {}} />)).toMatchSnapshot();

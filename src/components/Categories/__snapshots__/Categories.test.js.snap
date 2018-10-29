@@ -4,27 +4,27 @@ exports[`<Categories /> renders categories as individual elements 1`] = `
 <h4
   className="Categories"
 >
-  <button
+  <div
     className="Categories__category"
     key="a"
     onClick={[Function]}
   >
     a
-  </button>
-  <button
+  </div>
+  <div
     className="Categories__category"
     key="b"
     onClick={[Function]}
   >
     b
-  </button>
-  <button
+  </div>
+  <div
     className="Categories__category"
     key="c"
     onClick={[Function]}
   >
     c
-  </button>
+  </div>
 </h4>
 `;
 
@@ -38,7 +38,7 @@ exports[`<Categories /> when categories are removable it shows an X on category 
 <h4
   className="Categories"
 >
-  <button
+  <div
     className="Categories__category"
     key="a"
     onClick={[Function]}
@@ -47,7 +47,7 @@ exports[`<Categories /> when categories are removable it shows an X on category 
     <span>
        x
     </span>
-  </button>
+  </div>
 </h4>
 `;
 

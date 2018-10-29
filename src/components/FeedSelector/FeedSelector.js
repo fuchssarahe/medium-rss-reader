@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './FeedSelector.css';
 
+// Responsible for user interactions while determining which feed to show.
 class FeedSelector extends Component {
   constructor(props) {
     super(props);
@@ -13,7 +15,7 @@ class FeedSelector extends Component {
   }
 
   handleChange = (event) => {
-    this.setState({ feedName: event.target.value })
+    this.setState({ feedName: event.target.value });
   }
 
   render() {
@@ -24,6 +26,10 @@ class FeedSelector extends Component {
       </form>
     );
   }
+}
+
+FeedSelector.propTypes = {
+  handleSubmit: PropTypes.func.isRequired
 }
 
 export default FeedSelector;
