@@ -1,29 +1,35 @@
 import React, { Component } from 'react';
 import rssRequest from './helpers/rssRequest';
-import Article from './components/Article';
+import ArticleList from './components/ArticleList/ArticleList';
+import FeedSelector from './components/FeedSelector/FeedSelector';
 import './App.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { article: null };
+    this.state = { feedName: null, articles: null, isFetching: false };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  async componentDidMount() {
-    const feed = await rssRequest('https://medium.com/feed/the-atlantic')
-    this.setState({ article: feed });
+  handleChange(event) {
+    this.setState({ feedName: event.target.value });
+  }
+
+  async handleSubmit(event) {
+    event.preventDefault();
+    this.setState({ isFetching: true })
+    const feed = await rssRequest('https://medium.com/feed/' + this.state.feedName);
+    this.setState({ articles: feed, isFetching: false });
   }
 
   render() {
-    if (!this.state.article) { return (<article>Fetching...</article>) }
-
     return (
-      <ul className="App">
-        {this.state.article.items.map(item => {
-          console.log(item);
-          return <Article item={item} key={item.link}/>
-        })}
-      </ul>
+      <main className="App">
+        <h1>Medium RSS Reader</h1>
+        <FeedSelector handleSubmit={this.handleSubmit} handleChange={this.handleChange} />
+        <ArticleList articles={this.state.articles} isFetching={this.state.isFetching} />
+      </main>
     );
   }
 }

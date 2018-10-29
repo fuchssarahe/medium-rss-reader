@@ -1,0 +1,33 @@
+.Article {
+  border: 1px solid black;
+  margin: 1em auto;
+  max-width: 800px;
+  padding: 0.5em;
+  width: 80%;
+}
+
+.Article__title {
+  font-weight: bold;
+  padding-bottom: 0.5em;
+}
+
+.Article__metadata {
+  margin-left: 0.5em;
+}
+
+.Article__categories {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.Article__category {
+  border: 1px solid black;
+  border-radius: 0.25em;
+  margin: 0.5em;
+  padding: 0.25em;
+}
+
+.Article__snippet {
+  margin-left: 0.5em;
+}
