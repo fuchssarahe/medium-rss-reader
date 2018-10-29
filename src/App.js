@@ -3,61 +3,51 @@ import rssRequest from './helpers/rssRequest';
 import ArticleList from './components/ArticleList/ArticleList';
 import FeedSelector from './components/FeedSelector/FeedSelector';
 import Categories from './components/Categories/Categories';
+import filterArticlesByTags from './helpers/articleHelpers';
 import './App.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { feedName: null, articles: null, isFetching: false, tags: [] };
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.state = {
+      articles: null,
+      isFetching: false,
+      tags: new Set()
+    };
   }
 
-  handleChange(event) {
-    this.setState({ feedName: event.target.value });
-  }
-
-  async handleSubmit(event) {
-    event.preventDefault();
+  handleSubmit = async (feedName) => {
     this.setState({ isFetching: true })
-    const feed = await rssRequest('https://medium.com/feed/' + this.state.feedName);
-    this.setState({ articles: feed.items, isFetching: false });
-  }
 
-  filteredArticles() {
-    const { tags, articles } = this.state;
-    if (tags.length === 0) { return articles; }
+    const feed = await rssRequest('https://medium.com/feed/' + feedName);
 
-    return articles.filter(article => {
-      let matchesTags = true;
-      tags.forEach(tag => {
-        if (!article.categories.includes(tag)) { matchesTags = false; }
-      })
-      return matchesTags;
+    this.setState({
+      articles: feed.items,
+      isFetching: false
     });
   }
 
   addTag = (tag) => {
-    if (this.state.tags.includes(tag)) return;
-    const newTags = this.state.tags.concat([tag])
-    this.setState({ tags: newTags });
+    this.setState({ tags: this.state.tags.add(tag) });
   }
 
-  removeTag = (tagToRemove) => {
-    const newTags = this.state.tags.filter(tag => { return tag !== tagToRemove });
-    this.setState({ tags: newTags });
+  removeTag = (tag) => {
+    // I don't love that this state is mutating before being set through
+    // via #setState, but using a Set here keeps logic a little cleaner
+    this.state.tags.delete(tag)
+    this.setState({ tags: this.state.tags });
   }
 
   render() {
     return (
       <main className="App">
         <h1>Medium RSS Reader</h1>
-        <FeedSelector handleSubmit={this.handleSubmit} handleChange={this.handleChange} />
-        <Categories categories={this.state.tags} onClick={this.removeTag} removable="true" />
+        <FeedSelector handleSubmit={this.handleSubmit} />
+        <Categories categories={Array.from(this.state.tags)} onClick={this.removeTag} removable="true" />
         <ArticleList
-          articles={this.filteredArticles(this.state.articles)}
+          articles={filterArticlesByTags(this.state.articles, this.state.tags)}
           isFetching={this.state.isFetching}
-          addFilter={this.addTag}
+          addTagFilter={this.addTag}
         />
       </main>
     );

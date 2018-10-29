@@ -2,13 +2,13 @@ import React from 'react';
 import Categories from '../Categories/Categories';
 import './Article.css';
 
-const Article = ({ item, addFilter }) => {
+const Article = ({ item, addTagFilter }) => {
   return (
     <li className='Article'>
       <Title url={item.link} title={item.title} />
       <Metadata creator={item.creator} date={item.pubDate} />
-      <Categories categories={item.categories} onClick={addFilter} />
-      <Snippet text={item.contentSnippet} url={item.link} />
+      {item.categories && <Categories categories={item.categories} onClick={addTagFilter} />}
+      {item.contentSnippet && <Snippet text={item.contentSnippet} url={item.link} />}
     </li>
   );
 }
