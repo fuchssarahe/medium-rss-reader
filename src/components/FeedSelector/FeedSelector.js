@@ -21,8 +21,9 @@ class FeedSelector extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit} className='FeedSelector'>
-        <input type="text" name="feed-name" onChange={this.handleChange} className='FeedSelector__input'/>
-        <button type="submit" className='FeedSelector__button'>View Feed</button>
+        <label htmlFor='feed-name-input'>Medium User or Publication:</label>
+        <input type='text' name='feed-name' id='feed-name-input' onChange={this.handleChange} className='FeedSelector__input'/>
+        <button type='submit' className='FeedSelector__button'>View Feed</button>
       </form>
     );
   }

@@ -13,7 +13,7 @@ Single page app that presents an RSS reader for an input Medium feed.
 
 # Future work / candidates for improvement
 - Some missing unit tests for interactions with 3rd party APIs
-- Accessibility
+- Accessibility & browser testing
 - CSS improvements
     - define variables for colors/widths for consistent across product
     - Actual design?
@@ -21,6 +21,7 @@ Single page app that presents an RSS reader for an input Medium feed.
     - better in-browser experience for page navigation
     - ability to share links to current feed/filter
 - Better support for alternate RSS feeds/variations between users/publications on medium
+- Linting. Whoops.
 
 # Reference Resources
   https://medium.com/netscape/hacking-it-out-when-cors-wont-let-you-be-great-35f6206cc646

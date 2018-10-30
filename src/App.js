@@ -39,18 +39,20 @@ class App extends Component {
 
   render() {
     return (
-      <main className="App">
-        <div className="App__header">
+      <React.Fragment>
+        <header className='App__header'>
           <h1>Medium RSS Reader</h1>
           <FeedSelector handleSubmit={this.handleSubmit} />
-        </div>
-        <Categories categories={Array.from(this.state.tags)} onClick={this.removeTag} removable={true} />
-        <ArticleList
-          articles={filterArticlesByTags(this.state.articles, this.state.tags)}
-          isFetching={this.state.isFetching}
-          addTagFilter={this.addTag}
-        />
-      </main>
+        </header>
+        <main className='App'>
+          <Categories categories={Array.from(this.state.tags)} onClick={this.removeTag} removable={true} />
+          <ArticleList
+            articles={filterArticlesByTags(this.state.articles, this.state.tags)}
+            isFetching={this.state.isFetching}
+            addTagFilter={this.addTag}
+          />
+        </main>
+      </React.Fragment>
     );
   }
 }

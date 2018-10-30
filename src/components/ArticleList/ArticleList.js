@@ -11,13 +11,13 @@ const ArticleList = ({ articles, isFetching = false, addTagFilter }) => {
   if (!articles || articles.length === 0) return <EmptyArticlesList />;
 
   return (
-    <ul className='ArticleList'>
+    <ol className='ArticleList' role='feed' aria-busy={isFetching} aria-label='RSS feed'>
       {
         articles.map(item => {
           return <Article item={item} addTagFilter={addTagFilter} key={item.link} />
         }
       )}
-    </ul>
+    </ol>
   );
 }
 

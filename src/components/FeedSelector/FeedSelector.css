@@ -1,7 +1,21 @@
 .FeedSelector {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 15em;
+  justify-content: space-around;
 }
 
-.FeedSelector__input {}
+.FeedSelector__input {
+  padding: 0.5em;
+  margin-top: 1em;
+  font-size: 16px;
+}
 
-.FeedSelector__button {}
+ .FeedSelector__button {
+   padding: 0.5em;
+   margin-top: 1em;
+   border-radius: 0.5em;
+   font-size: 16px;
+ }

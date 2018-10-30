@@ -5,16 +5,18 @@ import './Categories.css';
 // Manages HTML and interactions with tags for articles.
 const Categories = ({ categories = [], removable = false, onClick = () => {} }) => {
   return (
-    <h4 className='Categories'>
+    <ul className='Categories' aria-label='Filterable categories'>
       {
         categories.map(category => (
-          <div className='Categories__category' key={category} onClick={() => onClick(category)}>
-            {category}
-            { removable && <span> x</span> }
-          </div>)
-        )
+          <li key={category}>
+            <button className='Categories__category' onClick={() => onClick(category)}>
+              {category}
+              {removable && <span aria-label='Click to remove filter'> x</span>}
+            </button>
+          </li>
+        ))
       }
-    </h4>
+    </ul>
   );
 }
 
@@ -22,6 +24,6 @@ Categories.propTypes = {
   categories: PropTypes.arrayOf(PropTypes.string),
   removable: PropTypes.bool,
   onClick: PropTypes.func
-}
+};
 
 export default Categories;
